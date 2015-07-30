@@ -1,0 +1,12 @@
+<h2><%= flash[:sign_in_message] %></h2>
+<%= link_to "Sign-up!", new_user_path %>
+<% if session[:is_signed_in] %>
+  <%= link_to "Sign-out!", "/sign_out" %>
+<% else %>
+  <%= link_to "Sign-in!", "/sign_in" %>
+<% end %>
+
+<h1>Registered Users</h1>
+<% @users.each do |user| %>
+  <p><%= user.username %></p>
+<% end %>
